@@ -24,14 +24,18 @@ supported_platforms = {
 dependencies = {
    "lua >= 5.2",
    "mjolnir.alert",
-   "mjolnir.application"
+   "mjolnir.application",
+   "mjolnir.hotkey",
+   "mjolnir._asm.sys.mouse",
+   "mjolnir._asm.eventtap"
 }
 
 build = {
   type = "builtin",
   modules = {
     ["mjolnir.ny.tiling"] = "tiling.lua",
-    ["mjolnir.ny.tiling.layouts"] = "layouts.lua"
+    ["mjolnir.ny.tiling.layouts"] = "layouts.lua",
+    ["mjolnir.ny.spaces"] = "spaces.lua"
   }
 }
 
