@@ -26,7 +26,7 @@ function spaces.movetospace(key)
     kev:setflags(spaces.modifiers)
     kev:post()
     event.newmouseevent(event.types.leftmouseup, position, 'left'):post()
-    -- event.newmouseevent(event.types.mousemoved, position0, 'left'):post()
+    event.newmouseevent(event.types.mousemoved, position0, 'left'):post()
 end
 
 return spaces
