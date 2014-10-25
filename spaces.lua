@@ -15,18 +15,23 @@ spaces.modifiers = {ctrl = true}
 --- Move to a particular space by simulating the key events needed to move to
 --- that space, bringing a window along with it if there is one.
 function spaces.movetospace(key)
-    local frame = window.focusedwindow():frame()
-
+  local win = window.focusedwindow()
+  if win == nil then
+    newkeyevent(spaces.modifiers, key, true):post()
+    newkeyevent(spaces.modifiers, key, false):post()
+  else
     local position0 = mouse.get()
+    local frame = win:frame()
     local position = {x=frame.x + 65, y=frame.y + 7}
     event.newmouseevent(event.types.mousemoved, position, 'left'):post()
-    os.execute("sleep 0.0.5")
+    os.execute("sleep 0.1")
     event.newmouseevent(event.types.leftmousedown, position, 'left'):post()
     newkeyevent(spaces.modifiers, key, true):post()
     newkeyevent(spaces.modifiers, key, false):post()
     event.newmouseevent(event.types.leftmousedown, position, 'left'):post()
     event.newmouseevent(event.types.leftmouseup, position, 'left'):post()
     event.newmouseevent(event.types.mousemoved, position0, 'left'):post()
+  end
 end
 
 
