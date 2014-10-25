@@ -20,6 +20,7 @@ function spaces.movetospace(key)
     local position0 = mouse.get()
     local position = {x=frame.x + 65, y=frame.y + 7}
     event.newmouseevent(event.types.mousemoved, position, 'left'):post()
+    os.execute("sleep 0.0.5")
     event.newmouseevent(event.types.leftmousedown, position, 'left'):post()
     newkeyevent(spaces.modifiers, key, true):post()
     newkeyevent(spaces.modifiers, key, false):post()
