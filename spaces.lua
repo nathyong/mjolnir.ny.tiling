@@ -13,7 +13,7 @@ function spaces.movetospace(key)
     local frame = window.focusedwindow():frame()
 
     local position0 = mouse.get()
-    local position = {x=frame.x + frame.w - 15, y=frame.y + 10}
+    local position = {x=frame.x + 65, y=frame.y + 7}
     event.newmouseevent(event.types.mousemoved, position, 'left'):post()
     event.newmouseevent(event.types.leftmousedown, position, 'left'):post()
     local kev = event.newkeyevent({}, '', true)
@@ -26,7 +26,7 @@ function spaces.movetospace(key)
     kev:setflags(spaces.modifiers)
     kev:post()
     event.newmouseevent(event.types.leftmouseup, position, 'left'):post()
-    event.newmouseevent(event.types.mousemoved, position0, 'left'):post()
+    -- event.newmouseevent(event.types.mousemoved, position0, 'left'):post()
 end
 
 return spaces
