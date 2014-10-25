@@ -1,11 +1,11 @@
 package = "mjolnir.ny.tiling"
-version = "0.1.0-1"
+version = "0.2.0-1"
 
 local url = "github.com/nathyong/mjolnir.ny.tiling"
 
 source = {
   url = "git://" .. url,
-  tag = "v0.1.0",
+  tag = "v0.2.0",
   dir = "mjolnir.ny.tiling"
 }
 
