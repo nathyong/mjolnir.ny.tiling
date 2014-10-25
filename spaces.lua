@@ -5,7 +5,7 @@ local mouse = require "mjolnir._asm.sys.mouse"
 local event = require "mjolnir._asm.eventtap.event"
 local keycodes = require "mjolnir.keycodes"
 
-spaces.modifiers = {alt = true}
+spaces.modifiers = {ctrl = true}
 
 -- 'key' is actually the string of whatever key you have bound to press to get
 -- to a particular space.
